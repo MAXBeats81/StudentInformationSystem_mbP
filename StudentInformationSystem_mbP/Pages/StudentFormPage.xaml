@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StudentInformationSystem_mbP.Pages.StudentFormPage"
+    Title="Add Student"
+    BackgroundColor="#0D0B10">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="14">
+
+            <Label
+                Text="Add Student"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="#B98AFF" />
+
+            <Label
+                Text="Enter the student's information below."
+                FontSize="14"
+                TextColor="#A9A4B0"
+                Margin="0,0,0,10" />
+
+
+            <!-- STUDENT ID -->
+
+            <Label
+                Text="STUDENT ID"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <Entry
+                x:Name="StudentIdEntry"
+                Placeholder="e.g. 2026-0001"
+                PlaceholderColor="#77727F"
+                TextColor="White"
+                BackgroundColor="#19161F" />
+
+
+            <!-- FIRST NAME -->
+
+            <Label
+                Text="FIRST NAME"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <Entry
+                x:Name="FirstNameEntry"
+                Placeholder="Enter first name"
+                PlaceholderColor="#77727F"
+                TextColor="White"
+                BackgroundColor="#19161F" />
+
+
+            <!-- LAST NAME -->
+
+            <Label
+                Text="LAST NAME"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <Entry
+                x:Name="LastNameEntry"
+                Placeholder="Enter last name"
+                PlaceholderColor="#77727F"
+                TextColor="White"
+                BackgroundColor="#19161F" />
+
+
+            <!-- EMAIL -->
+
+            <Label
+                Text="EMAIL"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="student@email.com"
+                PlaceholderColor="#77727F"
+                TextColor="White"
+                Keyboard="Email"
+                BackgroundColor="#19161F" />
+
+
+            <!-- PHONE -->
+
+            <Label
+                Text="PHONE NUMBER"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <Entry
+                x:Name="PhoneEntry"
+                Placeholder="09XXXXXXXXX"
+                PlaceholderColor="#77727F"
+                TextColor="White"
+                Keyboard="Telephone"
+                BackgroundColor="#19161F" />
+
+
+            <!-- GENDER -->
+
+            <Label
+                Text="GENDER"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <Picker
+                x:Name="GenderPicker"
+                Title="Select gender"
+                TitleColor="#77727F"
+                TextColor="White"
+                BackgroundColor="#19161F">
+
+                <Picker.Items>
+                    <x:String>Male</x:String>
+                    <x:String>Female</x:String>
+                    <x:String>Other</x:String>
+                </Picker.Items>
+
+            </Picker>
+
+
+            <!-- DATE OF BIRTH -->
+
+            <Label
+                Text="DATE OF BIRTH"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <DatePicker
+                x:Name="BirthDatePicker"
+                TextColor="White"
+                BackgroundColor="#19161F" />
+
+
+            <!-- COURSE -->
+
+            <Label
+                Text="COURSE / PROGRAM"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <Entry
+                x:Name="CourseEntry"
+                Placeholder="e.g. BS Information Technology"
+                PlaceholderColor="#77727F"
+                TextColor="White"
+                BackgroundColor="#19161F" />
+
+
+            <!-- ADDRESS -->
+
+            <Label
+                Text="ADDRESS"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <Editor
+                x:Name="AddressEditor"
+                Placeholder="Enter complete address"
+                PlaceholderColor="#77727F"
+                TextColor="White"
+                BackgroundColor="#19161F"
+                HeightRequest="100" />
+
+
+            <!-- PROFILE IMAGE -->
+
+            <Label
+                Text="PROFILE IMAGE"
+                FontSize="12"
+                TextColor="#A9A4B0" />
+
+            <Button
+                Text="SELECT PROFILE IMAGE"
+                Clicked="SelectImageClicked"
+                BackgroundColor="#292230"
+                TextColor="#C9A7FF" />
+
+            <Image
+                x:Name="ProfileImageView"
+                HeightRequest="140"
+                WidthRequest="140"
+                Aspect="AspectFill"
+                HorizontalOptions="Center"
+                BackgroundColor="#19161F" />
+
+
+            <!-- ERROR -->
+
+            <Label
+                x:Name="ErrorLabel"
+                TextColor="#FF6B81"
+                FontSize="13"
+                IsVisible="False" />
+
+
+            <!-- LOADING -->
+
+            <ActivityIndicator
+                x:Name="LoadingIndicator"
+                Color="#A970FF"
+                IsVisible="False"
+                IsRunning="False" />
+
+
+            <!-- SAVE -->
+
+            <Button
+                x:Name="SaveButton"
+                Text="SAVE STUDENT"
+                Clicked="SaveStudentClicked"
+                BackgroundColor="#8B4DFF"
+                TextColor="White"
+                FontAttributes="Bold"
+                HeightRequest="52"
+                Margin="0,10,0,20" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

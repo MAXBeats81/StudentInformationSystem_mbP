@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StudentInformationSystem_mbP.Pages.StudentListPage"
+    Title="Students"
+    BackgroundColor="#0D0B10">
+
+    <Grid
+        Padding="20"
+        RowDefinitions="Auto,Auto,Auto,*">
+
+        <!-- PAGE HEADER -->
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            Spacing="4">
+
+            <Label
+                Text="Students"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="#B98AFF" />
+
+            <Label
+                Text="Manage student records"
+                FontSize="14"
+                TextColor="#A9A4B0" />
+
+        </VerticalStackLayout>
+
+
+        <!-- SEARCH BAR -->
+
+        <SearchBar
+            Grid.Row="1"
+            x:Name="SearchBar"
+            Placeholder="Search ID, name, or course..."
+            PlaceholderColor="#77727F"
+            TextColor="White"
+            BackgroundColor="#19161F"
+            TextChanged="SearchBar_TextChanged"
+            Margin="0,15,0,10" />
+
+
+        <!-- REFRESH BUTTON -->
+
+        <Button
+            Grid.Row="2"
+            Text="↻  REFRESH STUDENTS"
+            Clicked="RefreshClicked"
+            BackgroundColor="#292230"
+            TextColor="#C9A7FF"
+            HeightRequest="45"
+            Margin="0,0,0,12" />
+
+
+        <!-- STUDENT LIST -->
+
+        <RefreshView
+            Grid.Row="3"
+            x:Name="RefreshViewControl"
+            Refreshing="RefreshView_Refreshing">
+
+            <CollectionView
+                x:Name="StudentCollectionView"
+                SelectionMode="Single"
+                SelectionChanged="StudentSelected">
+
+                <CollectionView.EmptyView>
+
+                    <VerticalStackLayout
+                        Padding="30"
+                        Spacing="10"
+                        VerticalOptions="Center">
+
+                        <Label
+                            Text="No students found"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center" />
+
+                        <Label
+                            Text="Add a student to get started."
+                            TextColor="#A9A4B0"
+                            HorizontalOptions="Center" />
+
+                    </VerticalStackLayout>
+
+                </CollectionView.EmptyView>
+
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <Border
+                            BackgroundColor="#19161F"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 16"
+                            Padding="12"
+                            Margin="0,0,0,10">
+
+                            <Grid
+                                ColumnDefinitions="70,*,Auto"
+                                RowDefinitions="Auto,Auto,Auto"
+                                ColumnSpacing="12">
+
+                                <!-- PROFILE IMAGE -->
+
+                                <Image
+                                    Grid.RowSpan="3"
+                                    Grid.Column="0"
+                                    Source="{Binding ProfileImage}"
+                                    HeightRequest="65"
+                                    WidthRequest="65"
+                                    Aspect="AspectFill"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+
+
+                                <!-- FULL NAME -->
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding FullName}"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    TextColor="White" />
+
+
+                                <!-- STUDENT ID -->
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="{Binding StudentId}"
+                                    FontSize="13"
+                                    TextColor="#B98AFF" />
+
+
+                                <!-- COURSE -->
+
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Text="{Binding Course}"
+                                    FontSize="13"
+                                    TextColor="#A9A4B0" />
+
+
+                                <!-- DELETE BUTTON -->
+
+                                <Button
+                                    Grid.Row="0"
+                                    Grid.RowSpan="3"
+                                    Grid.Column="2"
+                                    Text="DELETE"
+                                    Clicked="DeleteClicked"
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="#3A1824"
+                                    TextColor="#FF8FA3"
+                                    FontSize="11"
+                                    VerticalOptions="Center" />
+
+                            </Grid>
+
+                        </Border>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </RefreshView>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StudentInformationSystem_mbP.App">
+
+    <Application.Resources>
+
+        <Color x:Key="BackgroundColor">#0B0A0F</Color>
+        <Color x:Key="CardColor">#15131C</Color>
+        <Color x:Key="CardLightColor">#201C29</Color>
+
+        <Color x:Key="PrimaryPurple">#8B5CF6</Color>
+        <Color x:Key="DarkPurple">#6D28D9</Color>
+        <Color x:Key="LightPurple">#C4B5FD</Color>
+
+        <Color x:Key="PrimaryText">#FFFFFF</Color>
+        <Color x:Key="SecondaryText">#AAA6B5</Color>
+
+        <Color x:Key="SuccessColor">#4ADE80</Color>
+        <Color x:Key="ErrorColor">#F87171</Color>
+
+        <Style TargetType="ContentPage">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource BackgroundColor}" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor"
+                    Value="{StaticResource PrimaryText}" />
+            <Setter Property="FontFamily"
+                    Value="OpenSansRegular" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource PrimaryPurple}" />
+            <Setter Property="TextColor"
+                    Value="White" />
+            <Setter Property="FontAttributes"
+                    Value="Bold" />
+            <Setter Property="CornerRadius"
+                    Value="12" />
+            <Setter Property="HeightRequest"
+                    Value="52" />
+        </Style>
+
+    </Application.Resources>
+</Application>

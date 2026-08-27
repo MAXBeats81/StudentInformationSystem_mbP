@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="StudentInformationSystem_mbP.Pages.LoginPage"
+    NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="18"
+            VerticalOptions="Center">
+
+            <!-- APP LOGO / INITIALS -->
+
+            <Label
+                Text="SIS"
+                FontSize="52"
+                FontAttributes="Bold"
+                TextColor="{StaticResource PrimaryPurple}"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="STUDENT INFORMATION SYSTEM"
+                FontSize="20"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center" />
+
+            <Label
+                Text="Secure student management"
+                FontSize="14"
+                TextColor="{StaticResource SecondaryText}"
+                HorizontalTextAlignment="Center"
+                Margin="0,0,0,25" />
+
+
+            <!-- LOGIN CARD -->
+
+            <Border
+                BackgroundColor="{StaticResource CardColor}"
+                StrokeThickness="0"
+                Padding="22"
+                StrokeShape="RoundRectangle 20">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label
+                        Text="Sign in"
+                        FontSize="26"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Text="EMAIL"
+                        FontSize="12"
+                        TextColor="{StaticResource SecondaryText}" />
+
+                    <Entry
+                        x:Name="EmailEntry"
+                        Placeholder="Enter your email"
+                        PlaceholderColor="#77727F"
+                        TextColor="White"
+                        Keyboard="Email"
+                        BackgroundColor="{StaticResource CardLightColor}" />
+
+
+                    <Label
+                        Text="PASSWORD"
+                        FontSize="12"
+                        TextColor="{StaticResource SecondaryText}" />
+
+                    <Grid
+                        ColumnDefinitions="*,Auto">
+
+                        <Entry
+                            x:Name="PasswordEntry"
+                            Grid.Column="0"
+                            Placeholder="Enter your password"
+                            PlaceholderColor="#77727F"
+                            TextColor="White"
+                            IsPassword="True"
+                            BackgroundColor="{StaticResource CardLightColor}" />
+
+                        <Button
+                            Grid.Column="1"
+                            Text="SHOW"
+                            FontSize="10"
+                            BackgroundColor="Transparent"
+                            TextColor="{StaticResource LightPurple}"
+                            Clicked="ShowPasswordClicked" />
+
+                    </Grid>
+
+
+                    <!-- ERROR -->
+
+                    <Label
+                        x:Name="ErrorLabel"
+                        TextColor="{StaticResource ErrorColor}"
+                        FontSize="13"
+                        IsVisible="False" />
+
+
+                    <!-- LOADING -->
+
+                    <ActivityIndicator
+                        x:Name="LoadingIndicator"
+                        Color="{StaticResource PrimaryPurple}"
+                        IsVisible="False"
+                        IsRunning="False" />
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <Button
+                        x:Name="LoginButton"
+                        Text="LOGIN"
+                        Clicked="LoginClicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <Label
+                Text="Firebase Authentication"
+                FontSize="12"
+                TextColor="{StaticResource SecondaryText}"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
